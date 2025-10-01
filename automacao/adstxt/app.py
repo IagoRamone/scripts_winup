@@ -23,8 +23,12 @@ for index, row in df.iterrows():
     py.press("enter")
     time.sleep(2)
     
-    py.hotkey("ctrl", "k")
+    py.hotkey("ctrl", "t")
     time.sleep(1)
+    py.write(str(valor))
+    py.press("enter")
+    py.hotkey("ctrl", "w")
+    py.hotkey("ctrl", "t")
     py.write(str(valor))
     py.press("enter")
     
