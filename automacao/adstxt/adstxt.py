@@ -10,7 +10,7 @@ from openpyxl import load_workbook
 from urllib.parse import urlparse
 import time
 
-arquivo_excel = "teste.xlsx"
+arquivo_excel = "checklist.xlsx"
 df = pd.read_excel(arquivo_excel, header=None)
 wb = load_workbook(arquivo_excel)
 ws = wb.active
@@ -24,7 +24,7 @@ wait = WebDriverWait(driver, 20)
 for index, row in df.iterrows():
     url = str(row[0]).strip()
     if not url:
-        ws[f"B{index+2}"] = "(vazio)"
+        ws[f"B{index+1}"] = "(vazio)"
         continue
     if not urlparse(url).scheme:
         url = "http://" + url
@@ -44,4 +44,5 @@ for index, row in df.iterrows():
 
 wb.save(arquivo_excel)
 driver.quit()
-print("Feito.")
+print("Finalizado")
+print(df)
