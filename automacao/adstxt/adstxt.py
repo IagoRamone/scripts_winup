@@ -35,12 +35,12 @@ for index, row in df.iterrows():
         body_text = driver.find_element(By.TAG_NAME, "body").text
         lines = [l for l in (ln.strip() for ln in body_text.splitlines()) if l]
         primeiro_texto = lines[0] if lines else ""
-        ws[f"B{index + 2}"] = primeiro_texto
-        ws[f"C{index + 2}"] = (body_text[:32000] if body_text else "")
-        ws[f"D{index + 2}"] = "OK"
+        ws[f"B{index + 1}"] = primeiro_texto
+        ws[f"C{index + 1}"] = (body_text[:32000] if body_text else "")
+        ws[f"D{index + 1}"] = "OK"
     except Exception as e:
-        ws[f"B{index + 2}"] = f"ERRO: {e}"
-        ws[f"D{index + 2}"] = "ERROR"
+        ws[f"B{index + 1}"] = f"ERRO: {e}"
+        ws[f"D{index + 1}"] = "ERROR"
 
 wb.save(arquivo_excel)
 driver.quit()
