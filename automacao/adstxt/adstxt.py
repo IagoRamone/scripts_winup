@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 import time
 
 arquivo_excel = "checklist.xlsx"
-df = pd.read_excel(arquivo_excel, header=None)
+df = pd.read_excel(arquivo_excel,skiprows=0)
 wb = load_workbook(arquivo_excel)
 ws = wb.active
 
