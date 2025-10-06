@@ -1,0 +1,1 @@
+Automação preliminar para conferência de ads.txt.
