@@ -12,7 +12,6 @@ import time
 
 arquivo_excel = "checklist.xlsx"
 
-
 df = pd.read_excel(arquivo_excel, skiprows=1, header=None)
 
 wb = load_workbook(arquivo_excel)
@@ -21,7 +20,6 @@ ws = wb.active
 options = webdriver.ChromeOptions()
 options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
-
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 wait = WebDriverWait(driver, 20)
